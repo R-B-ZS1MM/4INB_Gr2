@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GIT i etyczki</title>
+  </head>
+
+  <body>
+    <!-- 
+    1. Załóż konto na github.com.
+    2. Zainstalowany Git (sprawdź w terminalu: git --version) - https://git-scm.com/downloads.
+    3. Otwórz terminal i ustaw swoje dane autora:
+        git config --global user.name "Twoje Imię"
+        git config --global user.email "twoj@email"
+
+
+    4A. Sklonowanie istniejącego repo z Github:
+    W terminalu: 
+        git clone git@github.com:USERNAME/repo.git
+   
+    W Git mamy trzy „stany” plików i dlatego mówi się o stagingu:
+
+    A. WORKING DIRECTORY (katalog roboczy)
+    To Twoje pliki na dysku, nad którymi pracujesz. Edytujesz np. index.html, zapisujesz zmiany.
+
+    B. STAGING AREA (obszar stage / index)
+    To takie poczekalnia zmian – mówisz Gitowi: „te pliki chcę uwzględnić w następnym commicie”.
+    Dodajesz je poleceniem:
+        git add plik1 plik2 
+        # albo wszystkie: 
+        git add .
+
+    C. COMMIT (lokalna historia)
+    Commit to zapisanie paczki zmian w historii repozytorium.
+    Po dodaniu do staged, tworzysz commit:
+        git commit -m "Opis zmian"
+    Ten commit jest już w Twoim repo lokalnym (ale jeszcze nie na GitHubie).
+
+    Wypchnięcie (wysłanie) swoich commitów z lokalnej gałęzi main do zdalnego repozytorium origin
+        git push origin main
+    git push – wysyła Twoje lokalne commity do repozytorium zdalnego (np. na GitHub).
+    origin – to domyślna nazwa zdalnego repozytorium, które podałeś przy git clone albo git remote add origin <url>.
+    main – to nazwa gałęzi, którą wysyłasz. W starszych repozytoriach zamiast main mogło być master.
+
+    Przykład działania:
+    Tworzysz commity lokalnie (git commit -m "msg").
+    Dopóki nie zrobisz git push, te commity są tylko na Twoim komputerze.
+    git push origin main wysyła je na GitHub do gałęzi main repozytorium origin. W skrócie: to jest krok, dzięki któremu inni (albo Ty sam na innym komputerze) zobaczą Twoje zmiany w repozytorium GitHub.
+
+    4B. Stworzenie repozytorium lokalnie i wypchnięcie go na GitHub:
+    1. Utwórz nowe repozytorium lokalne:
+    W terminalu przejdź do folderu swojego projektu:
+        cd moja-aplikacja
+    2. Zainicjuj repo:
+        git init
+        → To tworzy ukryty folder .git i od teraz Git śledzi ten projekt.
+    3. Dodaj pliki i pierwszy commit
+        git add .
+    4. Zrób commit:
+        git commit -m "Pierwszy commit"
+    5. Stwórz repozytorium na GitHub / Zaloguj się na github.com / Kliknij New repository / Podaj nazwę repo (np. moja-aplikacja) / Nie zaznaczaj „Initialize with README” – bo już masz repo lokalne / Kliknij Create repository.
+
+    6. Połącz lokalne repo z GitHubem / GitHub pokaże Ci komendy po utworzeniu repo. Zazwyczaj wygląda to tak:
+        git remote add origin https://github.com/nazwa_uzytkownikaa/nazwa_repo.git
+        git branch -M main
+        git push -u origin main
+
+     Co oznaczają te komendy?
+        git remote add origin <url> – dodaje zdalne repozytorium o nazwie origin.
+        git branch -M main – ustawia główną gałąź jako main.
+        git push -u origin main – wysyła Twoje commity na GitHub i zapamiętuje to repo/gałąź jako domyślną.
+    Od teraz możesz używać:
+        git push
+        git pull
+    bez podawania origin main za każdym razem.
+
+
+    Przydatne dodatkowe komendy:
+        git status        # sprawdź, co się zmieniło
+        git config --list # pozwala sprawdzić, czy user.name i user.email zostały poprawnie ustawione (q wychodzimy z listy)
+        git log --oneline # historia commitów w skrócie
+        git pull          # pobierz najnowsze zmiany z GitHuba
+
+    -->
+
+    <!-- 
+    PROPONOWANE WTYCZKI VSC:
+    Live Preview
+    Live Server
+    JavaScript (ES6) code snippets
+    PHP Intelephense
+    Prettier - Code formatter
+    -->
+ <script>
+    let x = 11;
+    console.log(Number(x.toString(2)));
+ </script>
+  </body>
+</html>
